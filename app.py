@@ -1,7 +1,16 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from entities.ciudad import Ciudad
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/ciudades')
+def ciudades():
+    ciudades = Ciudad.get_all()
+    return render_template('ciudades.html', ciudades = ciudades)
 
 @app.route('/ciudad', methods=['GET'])
 def get_ciudades():

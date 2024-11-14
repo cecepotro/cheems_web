@@ -10,7 +10,7 @@ class Ciudad:
     def get_all(cls):
         try:
             connection = get_db_connection()
-            cursor = connection.cursor()
+            cursor = connection.cursor(dictionary=True)
             cursor.execute('SELECT * FROM ciudad')
             return cursor.fetchall()
         except Error as e:
