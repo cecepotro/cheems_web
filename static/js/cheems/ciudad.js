@@ -6,3 +6,16 @@ function registrar(id){
         $('#modal_info').modal('show');
     })
 }
+
+function save(){
+    fetch('/ciudad', {
+
+    })
+    .then(response => {
+        if (response.status === 201) {
+        } else {
+            alert(`Ocurrió un error al guardar: ${response.status}`);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
