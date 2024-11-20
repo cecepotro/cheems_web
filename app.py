@@ -12,6 +12,10 @@ def ciudades():
     ciudades = Ciudad.get_all()
     return render_template('ciudades.html', ciudades = ciudades)
 
+@app.route('/ciudad-registro', methods=['GET'])
+def ciudad_registro():
+    return render_template('ciudad.html')
+
 @app.route('/ciudad', methods=['GET'])
 def get_ciudades():
     ciudades = Ciudad.get_all()

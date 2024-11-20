@@ -41,7 +41,7 @@
                                         <td>{{ c.codigo }}</td>
                                         <td>
                                             <div class="btn-group me-2 mb-2 mb-sm-0 font-size-16">
-                                                <a onclick="registro({{ c.id }})" class="btn btn-info waves-light waves-effect"><i class="fas fa-pen"></i></a>
+                                                <a onclick="registrar({{ c.id }})" class="btn btn-info waves-light waves-effect"><i class="fas fa-pen"></i></a>
                                                 <a onclick="eliminar({{ c.id }})" class="btn btn-danger waves-light waves-effect"><i class="far fa-trash-alt"></i></a>
                                             </div>
                                         </td>
@@ -59,4 +59,5 @@
             </div>
         </div>
     </section>
-{% include 'footer.html' %}
+    <script src="{{ url_for('static', filename='js/cheems/ciudad.js') }}"></script>
+{% include 'footer.html' %} 
