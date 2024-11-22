@@ -8,11 +8,20 @@ function registrar(id){
 }
 
 function save(){
-    fetch('/ciudad', {
+    const nombre = document.getElementById('form-nombre').value;
+    const codigo = document.getElementById('form-codigo').value;
+    
+    const data = {nombre, codigo};
 
+    fetch('/ciudad', {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json'},
+        body: JSON.stringify(data)
     })
     .then(response => {
         if (response.status === 201) {
+            alert('El registro se guardó correctamente');
+            location.reload();
         } else {
             alert(`Ocurrió un error al guardar: ${response.status}`);
         }

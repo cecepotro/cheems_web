@@ -7,6 +7,8 @@ class Ciudad:
         self.codigo = codigo
     
     @classmethod
+
+    
     def get_all(cls):
         try:
             connection = get_db_connection()
